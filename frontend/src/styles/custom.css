@@ -1,0 +1,460 @@
+/* Album Detail specific */
+.album-header-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+.btn-primary-custom {
+  background: #c8f135;
+  color: #0f0f0f;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary-custom:hover {
+  background: #d4f74e;
+  color: #0f0f0f;
+}
+
+.photo-card img {
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.delete-btn {
+  top: 8px;
+  right: 8px;
+  background: rgba(220, 53, 69, 0.85) !important;
+  border: none !important;
+  border-radius: 8px !important;
+}
+
+.page-bg {
+  background: #0f0f0f;
+  min-height: calc(100vh - 128px);
+}
+
+.loading-text {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Album Page */
+
+/* Page */
+.page-bg {
+  background: #0f0f0f;
+  min-height: calc(100vh - 128px);
+}
+
+/* Titles */
+.album-header-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+/* Search input */
+.search-input {
+  background: #141414 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  font-size: 0.88rem;
+}
+
+.search-input:focus {
+  background: #141414 !important;
+  border-color: rgba(200, 241, 53, 0.4) !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+.search-input::placeholder {
+  color: #444;
+}
+
+/* Album card */
+.album-card {
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: transform 0.18s, border-color 0.18s;
+}
+
+.album-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 241, 53, 0.2);
+}
+
+/* Cover */
+.album-cover {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.album-cover-placeholder {
+  background: linear-gradient(135deg, #1a1a2a, #0f0f1a);
+  font-size: 2.5rem;
+}
+
+.album-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.6));
+}
+
+.album-private-badge {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.68rem;
+}
+
+/* Info */
+.album-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.album-photos-count {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.album-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c8f135;
+  display: inline-block;
+}
+
+.album-user {
+  font-size: 0.72rem;
+  color: #444;
+}
+
+/* Buttons */
+.btn-primary-custom {
+  background: #c8f135 !important;
+  color: #0f0f0f !important;
+  border: none !important;
+  font-size: 0.85rem;
+}
+
+.btn-primary-custom:hover {
+  background: #d4f74e !important;
+  color: #0f0f0f !important;
+}
+
+
+/* Create Album */
+
+/* Form Card */
+.form-card {
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.form-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.form-subtitle {
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.form-label-custom {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.text-optional {
+  color: #444;
+}
+
+/* Upload Box */
+.upload-box {
+  height: 160px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  background: #1a1a1a;
+  transition: border 0.15s;
+}
+
+.upload-box:hover {
+  border-color: rgba(200, 241, 53, 0.3);
+}
+
+.upload-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.upload-hint {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.upload-hint-sub {
+  font-size: 0.72rem;
+  color: #333;
+}
+
+/* Toggle */
+.toggle-box {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.toggle-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.toggle-sublabel {
+  font-size: 0.72rem;
+  color: #555;
+  margin-top: 2px;
+}
+
+.toggle-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toggle-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  transition: left 0.2s;
+}
+
+/* Cancel Button */
+.btn-cancel {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #888 !important;
+  background: transparent !important;
+  font-size: 0.88rem;
+}
+
+.btn-cancel:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+/* create album done */
+
+/* home */
+
+/* Hero */
+.hero-badge {
+  background: rgba(200, 241, 53, 0.08);
+  color: #c8f135;
+  border: 1px solid rgba(200, 241, 53, 0.2);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  color: #fff;
+}
+
+.hero-subtitle {
+  color: #555;
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+.text-accent {
+  color: #c8f135;
+}
+
+/* Outline button */
+.btn-outline-custom {
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+  background: transparent !important;
+}
+
+.btn-outline-custom:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Stats */
+.stats-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat-item {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stat-lbl {
+  font-size: 0.72rem;
+  color: #444;
+}
+
+/* Section titles */
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.see-all-link {
+  color: #c8f135;
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+/* Recent Photos */
+.photo-item {
+  cursor: pointer;
+}
+
+.photo-emoji {
+  font-size: 2rem;
+}
+
+.photo-info {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.photo-info-title {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.photo-info-user {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* CTA Banner */
+.cta-banner {
+  background: #1a1a1a;
+  border: 1px solid rgba(200, 241, 53, 0.1);
+}
+
+.cta-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.cta-subtitle {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* home end */
+
+/* login */
+
+/* Forgot password */
+.forgot-link {
+  font-size: 0.78rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.forgot-link:hover {
+  color: #c8f135;
+}
+
+/* Divider */
+.divider-line {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.divider-text {
+  font-size: 0.75rem;
+  color: #444;
+}
+
+/* Auth footer */
+.auth-footer-text {
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.auth-link {
+  color: #c8f135;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  color: #d4f74e;
+}
+
+/* login end */
+
+/* signup */
+
+.input-hint {
+  font-size: 0.72rem;
+  color: #444;
+}
+
+/* signup end */
+
+/* userProfile */
+
+/* Disabled input */
+.input-disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+/* userProfile end */

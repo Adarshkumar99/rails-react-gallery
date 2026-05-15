@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# Public album — user :one ka
+public_one:
+  title: "Public Album One"
+  is_private: false
+  user: one
+ 
+# Private album — index me nahi aana chahiye
+private_one:
+  title: "Private Album"
+  is_private: true
+  user: one
+ 
+# Delete test ke liye alag fixture
+deletable:
+  title: "Deletable Album"
+  is_private: false
+  user: one
+ 
+# user :two ka album — ownership tests ke liye
+other_user_album:
+  title: "Other User Album"
+  is_private: false
+  user: two
