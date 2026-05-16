@@ -1,4 +1,5 @@
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api/v1";
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
 const getToken = () => localStorage.getItem("token");
 
@@ -7,7 +8,7 @@ const api = {
     fetch(`${BASE_URL}${url}`, {
       headers: { Authorization: getToken() },
     }).then((res) => {
-      if (!res.ok) throw new Error(res.status); // ← yeh add karo
+      if (!res.ok) throw new Error(res.status);
       return res.json();
     }),
 
@@ -36,7 +37,7 @@ const api = {
       method: "DELETE",
       headers: { Authorization: getToken() },
     }).then((res) => {
-      if (!res.ok) throw new Error(res.status); // ← yeh bhi
+      if (!res.ok) throw new Error(res.status);
       return res;
     }),
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
 import { useAuth } from "../context/AuthContext";
+import { BACKEND_URL } from "../api/api";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ function Login() {
   const handleLogin = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/users/sign_in", {
+      const res = await fetch(`${BACKEND_URL}/users/sign_in`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user: { email, password } }),

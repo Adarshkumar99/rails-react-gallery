@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
 import { useAuth } from "../context/AuthContext";
+import { BACKEND_URL } from "../api/api";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ function Signup() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/users", {
+      const res = await fetch(`${BACKEND_URL}/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -42,7 +43,8 @@ function Signup() {
       }
 
       const token = res.headers.get("Authorization");
-      login(token, email); // context se login karo
+      const data = await res.json();
+      login(token, data.user.email);
       toast.success("Account created successfully!");
       navigate("/");
     } catch (err) {

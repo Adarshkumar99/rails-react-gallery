@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
+import { BACKEND_URL } from "../api/api";
 
 function UserProfile() {
   const { email, token } = useAuth();
@@ -22,7 +23,7 @@ function UserProfile() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/users", {
+      const res = await fetch(`${BACKEND_URL}/users`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
