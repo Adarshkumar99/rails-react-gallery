@@ -57,16 +57,7 @@ function AlbumDetail() {
 
     const handleDelete = async (photoId) => {
     try {
-      const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:3000/api/v1/photos/${photoId}`, {
-        method: "DELETE",
-        headers: { Authorization: token },
-      });
-
-      if (!res.ok) {
-        console.error("Failed to delete photo");
-        return;
-      }
+      const res = await api.delete(`/photos/${photoId}`);
 
       setAlbum((prev) => ({
         ...prev,
@@ -103,7 +94,7 @@ function AlbumDetail() {
     <div className="d-flex align-items-center justify-content-between mb-4">
       <h1 className="album-header-title">{album.title}</h1>
 
-      {isLoggedIn && (
+      {album.is_owner && (
         <div className="d-flex gap-2">
           <Link
             to={`/albums/${id}/edit`}
@@ -136,12 +127,12 @@ function AlbumDetail() {
                 alt="photo"
                 loading="lazy"
               />
-              {isLoggedIn && (
+              {album.is_owner && (
                 <button
                   className="btn btn-sm position-absolute delete-btn"
                   onClick={() => handleDelete(photo.id)}
                 >
-                  🗑 Delete
+                  🗑
                 </button>
               )}
             </div>

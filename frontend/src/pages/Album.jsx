@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import api from "../api/api";
+import toast from "react-hot-toast";
 
 function Albums({ apiUrl, title = "All Albums" }) {
   const [albums, setAlbums] = useState([]);
@@ -21,7 +22,7 @@ function Albums({ apiUrl, title = "All Albums" }) {
       const data = await api.get(apiUrl);
       setAlbums(data);
     } catch (err) {
-      console.error("Error fetching albums", err);
+      toast.error("Error fetching albums", err);
     } finally {
       setLoading(false);
     }
@@ -30,6 +31,18 @@ function Albums({ apiUrl, title = "All Albums" }) {
   const filtered = albums.filter((a) =>
     a.title.toLowerCase().includes(search.toLowerCase())
   );
+
+  const handleDelete = async (albumId, e) => {
+     e.stopPropagation();
+    if (!window.confirm("Are you sure you want to delete this album?")) return;
+    try {
+      await api.delete(`/albums/${albumId}`);
+      setAlbums((prev) => prev.filter((a) => a.id !== albumId));
+      toast.success("Album deleted successfully!");
+    } catch (err) {
+      toast.error("Failed to delete album", err);
+    }
+  };
 
   if (loading) {
     return (
@@ -104,6 +117,12 @@ function Albums({ apiUrl, title = "All Albums" }) {
                     </div>
                   )}
                   <div className="album-cover-overlay" />
+                  {album.is_owner && (
+                    <button className="btn btn-sm position-absolute delete-btn"
+                      onClick={(e) => handleDelete(album.id, e)}>
+                      🗑
+                    </button>
+                  )}
                   {album.is_private && (
                     <span className="badge position-absolute top-0 start-0 m-2 album-private-badge">
                       🔒 Private
