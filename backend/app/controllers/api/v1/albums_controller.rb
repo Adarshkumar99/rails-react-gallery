@@ -12,6 +12,8 @@ module Api
       			title: album.title,
       			cover_image_url: album.cover_image.attached? ? url_for(album.cover_image) : nil,
       			photos_count: album.photos_count,
+            is_private: album.is_private,
+            is_owner: user_signed_in? && album.user_id == current_user.id,
       			user: { email: album.user.email }
       		}
       	}
@@ -48,6 +50,7 @@ module Api
       		title: @album.title,
       		cover_image_url: @album.cover_image.attached? ? url_for(@album.cover_image) : nil,
       		is_private: @album.is_private,
+          is_owner: user_signed_in? && @album.user_id == current_user.id, #this will help frontend to decide whether to show edit/delete buttons
       		photos: @album.photos.map { |photo|
       			{
       				id: photo.id,
@@ -69,7 +72,9 @@ module Api
       			id: album.id,
       			title: album.title,
       			cover_image_url: album.cover_image.attached? ? url_for(album.cover_image) : nil,
-      			photos_count: album.photos_count
+      			photos_count: album.photos_count,
+            is_private: album.is_private,
+            is_owner: user_signed_in? && album.user_id == current_user.id
       		}
       	}
       end
