@@ -74,7 +74,7 @@ function Albums({ apiUrl, title = "All Albums" }) {
           <p className="text-muted small mb-4">Be the first to create an album!</p>
           {isLoggedIn && (
             <Link
-              to="/albums/new"
+              to="/album/new"
               className="btn rounded-pill fw-semibold btn-primary-custom px-4"
             >
               Create Album
