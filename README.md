@@ -7,7 +7,6 @@ A full-stack photo gallery application with a **Ruby on Rails** JSON API backend
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-database-336791?logo=postgresql&logoColor=white)
 ![Devise JWT](https://img.shields.io/badge/Auth-Devise%20JWT-3178C6)
 ![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
@@ -137,47 +136,3 @@ cd frontend
 npm install
 npm run dev
 ```
-
-The frontend will be available at `http://localhost:5173/` and expects the API to be reachable (configure the base URL in `src/api/api.js`).
-
----
-
-## API Endpoints
-
-| Method | Endpoint                       | Description                          | Auth Required |
-|--------|----------------------------------|----------------------------------------|----------------|
-| POST   | `/users`                          | Register a new user                     | No             |
-| POST   | `/users/sign_in`                   | Log in and receive a JWT                 | No             |
-| DELETE | `/users/sign_out`                   | Log out and revoke the JWT                | Yes            |
-| GET    | `/api/v1/albums`                     | List all public albums                     | No             |
-| GET    | `/api/v1/albums/my_albums`            | List the current user's albums              | Yes            |
-| GET    | `/api/v1/albums/:id`                   | View a single album with its photos          | No*            |
-| POST   | `/api/v1/albums`                        | Create a new album                            | Yes            |
-| PATCH  | `/api/v1/albums/:id`                     | Update an album                                | Yes            |
-| DELETE | `/api/v1/albums/:id`                      | Delete an album                                 | Yes            |
-| POST   | `/api/v1/photos`                           | Upload a photo to an album                       | Yes            |
-| DELETE | `/api/v1/photos/:id`                        | Delete a photo                                    | Yes            |
-
-\* Private albums are only visible to their owner.
-
----
-
-## Deployment
-
-- **Backend** ships as a Docker image and is configured for zero-downtime deployment via [Kamal](https://kamal-deploy.org) (`backend/config/deploy.yml`).
-- **Frontend** is configured for deployment on [Vercel](https://vercel.com) (`frontend/vercel.json`).
-
----
-
-## Roadmap
-
-- [ ] Photo tagging and search
-- [ ] Album sharing via a public link
-- [ ] Drag-and-drop photo upload with progress indicators
-- [ ] Pagination/infinite scroll for large albums
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
